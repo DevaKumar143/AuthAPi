@@ -4,7 +4,8 @@ const {Schema} = mongoose;
 const userSchema = new Schema({
     username: {
         type: String,
-        required:true
+        required:true,
+        trim: true
     },
     email: {
         type: String,
@@ -14,6 +15,12 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+     followers: [
+        { type: Schema.Types.ObjectId, ref: "User" }  // users who follow this user
+    ],
+    following: [
+        { type: Schema.Types.ObjectId, ref: "User" }  // users this user follows
+    ],
     createdAt: {
         type: Date,
         default: Date.now()

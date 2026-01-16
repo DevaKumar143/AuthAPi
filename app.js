@@ -4,7 +4,9 @@ const port = 8080;
 const mongoose = require("mongoose");
 const authRoutes = require("./modules/auth/auth.route");
 const errorMiddleware = require("./middlewares/error.middleware");
-
+const userRoutes = require("./modules/users/user.route");
+const postRoutes = require("./modules/posts/post.route");
+const followRoutes = require("./modules/follows/follow.route");
 app.use(express.json());
 
 
@@ -18,7 +20,10 @@ async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/instagram");
 }
 
-app.use("/",authRoutes);
+app.use("/auth",authRoutes);
+app.use("/users",userRoutes);
+app.use("/posts", postRoutes);
+app.use("/", followRoutes);
 app.use(errorMiddleware);
 
 
