@@ -12,7 +12,7 @@ The project follows a **feature-based modular architecture** with clean separati
 
 ## Key Features
 
-### 🔐 Authentication
+###  Authentication
 - User registration
 - User login with JWT
 - Protected routes using authentication middleware
@@ -47,5 +47,5 @@ The project follows a **feature-based modular architecture** with clean separati
 
 
 
-## Project Structure
+
 
